@@ -1,0 +1,2 @@
+class DesignEvent < ApplicationRecord
+end

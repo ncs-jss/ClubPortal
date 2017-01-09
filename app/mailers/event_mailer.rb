@@ -10,7 +10,7 @@ class EventMailer < ApplicationMailer
 		mail(to: student.email, subject: 'Congratulations!')
 	end
 
-	def end_time_reminder
+	def end_time_reminder(student, event)
 		@student = student
 		mail(to: student.email, subject: 'Task is about to end')
 	end

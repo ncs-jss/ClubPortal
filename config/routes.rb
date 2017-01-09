@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   as :student do
     # Define routes for student within this block.
   end
+
+  resources :design_events
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

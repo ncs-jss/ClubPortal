@@ -1,2 +1,2 @@
-class Submission < ActiveRecord::Base
+class Submission < ApplicationRecord
 end
