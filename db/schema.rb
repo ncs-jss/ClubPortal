@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 20170109202905) do
   create_table "submissions", force: :cascade do |t|
     t.string  "comment"
     t.integer "design_event_id"
-    t.integer "students_id"
+    t.integer "student_id"
     t.index ["design_event_id"], name: "index_submissions_on_design_event_id"
-    t.index ["students_id"], name: "index_submissions_on_students_id"
+    t.index ["student_id"], name: "index_submissions_on_student_id"
   end
 
   create_table "users", force: :cascade do |t|
