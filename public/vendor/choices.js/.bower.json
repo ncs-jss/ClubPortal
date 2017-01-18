@@ -1,0 +1,43 @@
+{
+  "name": "choices.js",
+  "version": "2.5.1",
+  "description": "A vanilla JS customisable text input/select box plugin",
+  "main": [
+    "./assets/scripts/dist/choices.js",
+    "./assets/styles/css/choices.css"
+  ],
+  "authors": [
+    "Josh Johnson"
+  ],
+  "license": "MIT",
+  "homepage": "https://joshuajohnson.co.uk/Choices/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "assets/images",
+    "webpack.config.dev.js",
+    "webpack.config.prod.js",
+    "server.js"
+  ],
+  "keywords": [
+    "customisable",
+    "input",
+    "select",
+    "vanilla",
+    "plugin",
+    "js"
+  ],
+  "_release": "2.5.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.5.1",
+    "commit": "6c29011d9b1213443edc39aa942d21c359a10c53"
+  },
+  "_source": "https://github.com/jshjohnson/Choices.git",
+  "_target": "^2.5.1",
+  "_originalSource": "choices.js",
+  "_direct": true
+}

@@ -1,0 +1,14 @@
+{
+  "name": "jstack",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-permission": "^4.0.6",
+    "angular-local-storage": "^0.5.2",
+    "google-code-prettify": "^1.0.5",
+    "choices.js": "^2.5.1",
+    "angular-sanitize": "^1.6.0",
+    "ng-file-upload": "^12.2.13"
+  }
+}
