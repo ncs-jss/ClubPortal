@@ -1,7 +1,7 @@
 class DesignEventsController < ApplicationController
-	
+  
   before_action :find_event_and_student, only: [:submit]
-	
+
   def create
 		event = DesignEvent.new(event_params)
 		if event.save
