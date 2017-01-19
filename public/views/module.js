@@ -1,4 +1,4 @@
-angular.module('ClubPortal', ['ngRoute', 'auth', 'LocalStorageModule','ngFileUpload']).config(function(localStorageServiceProvider, $locationProvider) {
+angular.module('ClubPortal', ['ngRoute', 'auth', 'LocalStorageModule']).config(function(localStorageServiceProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     localStorageServiceProvider.setPrefix('ClubPortal').setStorageType('localStorage');
 }).service('SessionService', function(localStorageService) {
@@ -15,7 +15,7 @@ angular.module('ClubPortal', ['ngRoute', 'auth', 'LocalStorageModule','ngFileUpl
         return localStorageService.cookie.get("userType");
     };
     this.setEditableBlog = function(blogs) {
-        localStorageService.cookie.set("editBlogs",blogs);
+        localStorageService.cookie.set("editBlogs", blogs);
     };
     this.getEditableBlog = function() {
         return localStorageService.cookie.get("editBlogs");
@@ -27,7 +27,12 @@ angular.module('ClubPortal', ['ngRoute', 'auth', 'LocalStorageModule','ngFileUpl
         }
         return false;
     };
-}).run(function($rootScope,$route, $templateCache, $http) {
+}).config(function($routeProvider) {
+    $routeProvider.when('/', {
+        templateUrl: '/views/landing/landing.html',
+        controller: 'landingCtrl'
+    });
+}).run(function($rootScope, $route, $templateCache, $http) {
     console.log('test');
     $rootScope.d = function(elem) {
         elem = document.querySelector(elem);
