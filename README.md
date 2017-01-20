@@ -29,7 +29,8 @@ All API paths must be prefixed with `/api/v1`
 
 | path | method | purpose |
 |:-----|:-------|:--------|
-| /design_events    | POST   | Create a new event. | 
+| /design_events    | POST   | Create a new event. |
+| /design_events/:id    | PATCH  | Edit an exsisting event with id: `id`. | 
 
 Example params:
 
@@ -50,6 +51,7 @@ Example params:
 
 | path | method | purpose |
 |:-----|:-------|:--------|
+| /design_events    | GET  | Fetch all current, past or future events |  
 | /design_events/:id   | GET  | Fetch event from `id` | 
 | /design_events/:id/submit    | POST   | Submit the picture for the event with id: `id`by the current logged in student. params: `comment` , `solution_image` | 
 

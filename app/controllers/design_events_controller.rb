@@ -1,6 +1,6 @@
 class DesignEventsController < ApplicationController
   
-  before_action :find_event_and_student, only: [:submit]
+  before_action :find_event_and_student, only: [:submit, :update]
 
   def create
 		event = DesignEvent.new(event_params)
@@ -11,8 +11,19 @@ class DesignEventsController < ApplicationController
 		end
 	end
 
+  def index
+    render json: DesignEvent.all
+  end
+
+  def update
+    @event.update_attributes(event_params)
+    render json: @event
+  rescue
+    render json: { "error": "Couldn't update event" }
+  end
+
   def submit
-    submission = Submission.new(design_event: @event, student: Student.last, comment: params[:comment])
+    submission = Submission.new(design_event: @event, student: current_student, comment: params[:comment])
     if submission.save
       @event.increment_submission
       render json: submission.to_json
