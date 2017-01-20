@@ -2,5 +2,70 @@
     <pre-loader ng-hide="isLoaded"></pre-loader>
 -->
 <base-wrap/>
-<h2>Base</h2>
+<h3>
+    <i class="fa fa-angle-right"></i>
+    Home
+</h3>
+<div class="row mt landing">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-xs-12 mb">
+                <!-- WHITE PANEL - TOP USER -->
+                <div class="white-panel">
+                    <div class="white-header">
+                        <h5>Clubs</h5>
+                    </div>
+                    <div class="row flex flex-center-h">
+                        <div class="col-lg-3 col-md-6 col-sm-4 mb" ng-repeat="club in clubs">
+                            <!-- ng-class-even="'col-lg-offset-1'" -->
+                            <div class="content-panel pn">
+                                <div id="blog-bg">
+                                    <div class="badge badge-popular">Events</div>
+                                    <div class="blog-title">{{ club.title }}</div>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                        {{ club.desc }}
+                                        <a href="#">View More</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 mb">
+                <!-- WHITE PANEL - TOP USER -->
+                <div class="white-panel">
+                    <div class="white-header">
+                        <h5>Ongoing Events</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 mb" ng-repeat="event in events">
+                            <div class="content-panel pn">
+                                <div id="blog-bg">
+                                    <div class="badge badge-popular">View</div>
+                                    <div class="blog-title">{{ event.title }}</div>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                        {{ event.desc }}
+                                        <!-- <a href="#">View Event</a> -->
+                                        <br/>
+                                        <button type="button" class="btn btn-theme">
+                                            <i class="fa fa-cog"></i>
+                                            View Event
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </base-wrap>

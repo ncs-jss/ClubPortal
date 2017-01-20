@@ -1,0 +1,15 @@
+.flex {
+    display: flex;
+}
+
+.flex-center-h {
+    justify-content: center;
+}
+
+.flex-center-v {
+    align-items: center;
+}
+
+.landing .white-panel i {
+    color: inherit;
+}

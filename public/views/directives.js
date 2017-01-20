@@ -11,10 +11,41 @@ angular.module('ClubPortal').directive('preLoader', function() {
         transclude: true,
         templateUrl: '/views/partials/blank.html',
         link: function(scope, el, attrs, ctrl, transclude) {
-            el.find('.wrapper').append(transclude());
+            // el.find('.wrapper').append(transclude());
         },
         controller: function($scope, $rootScope, $attrs) {
-            console.log('test3');
+            $scope.clubs = [{
+                title: "Web Club",
+                desc: "Lorem"
+            }, {
+                title: "Design Club",
+                desc: "Ipsum"
+            }, {
+                title: "Design Club",
+                desc: "Ipsum"
+            }, {
+                title: "Design Club",
+                desc: "Ipsum"
+            }];
+            $scope.events = [{
+                title: "Event 1",
+                desc: "Lorem"
+            }, {
+                title: "Event 1",
+                desc: "Ipsum"
+            }, {
+                title: "Event 1",
+                desc: "Ipsum"
+            }, {
+                title: "Event 1",
+                desc: "Ipsum"
+            }, {
+                title: "Event 1",
+                desc: "Ipsum"
+            }, {
+                title: "Event 1",
+                desc: "Ipsum"
+            }];
         }
     };
 }).directive('navBar', function() {

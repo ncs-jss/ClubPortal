@@ -1,4 +1,4 @@
-angular.module('ClubPortal', ['ngRoute', 'auth', 'LocalStorageModule']).config(function(localStorageServiceProvider, $locationProvider) {
+angular.module('ClubPortal', ['ngRoute', 'auth', 'LocalStorageModule', "ngScrollTo"]).config(function(localStorageServiceProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     localStorageServiceProvider.setPrefix('ClubPortal').setStorageType('localStorage');
 }).service('SessionService', function(localStorageService) {
@@ -27,10 +27,21 @@ angular.module('ClubPortal', ['ngRoute', 'auth', 'LocalStorageModule']).config(f
         }
         return false;
     };
-}).config(function($routeProvider) {
+}).config(function($routeProvider, ngScrollToOptionsProvider) {
     $routeProvider.when('/', {
         templateUrl: '/views/landing/landing.html',
         controller: 'landingCtrl'
+    });
+    ngScrollToOptionsProvider.extend({
+        handler: function(el) {
+            $(el).scrollintoview({
+                duration: 25000,
+                complete: function() {
+                    // highlight the element so user's focus gets where it needs to be
+                    console.log('t');
+                }
+            });
+        }
     });
 }).run(function($rootScope, $route, $templateCache, $http) {
     console.log('test');
