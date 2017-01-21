@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20170109202905) do
 
   create_table "design_events", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
+    t.string   "title"
+    t.string   "desc"
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "total_submissions", default: 0
