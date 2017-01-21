@@ -8,25 +8,31 @@
 </h3>
 <div class="row mt landing">
     <div class="col-lg-12">
-        <div class="row">
+        <div class="row club-row">
             <div class="col-xs-12 mb">
                 <!-- WHITE PANEL - TOP USER -->
-                <div class="white-panel">
-                    <div class="white-header">
-                        <h5>Clubs</h5>
+                <div class="white-panel bg-transparent">
+                    <div class="white-header bg-blue">
+                        <h5 class="text-white">Clubs</h5>
                     </div>
                     <div class="row flex flex-center-h">
-                        <div class="col-lg-3 col-md-6 col-sm-4 mb" ng-repeat="club in clubs">
+                        <div class="col-lg-3 col-md-6 col-sm-4 mb" ng-repeat="club in clubs" ng-switch="$index">
                             <!-- ng-class-even="'col-lg-offset-1'" -->
                             <div class="content-panel pn">
                                 <div id="blog-bg">
-                                    <div class="badge badge-popular">Events</div>
-                                    <div class="blog-title">{{ club.title }}</div>
+                                    <div class="badge badge-popular">
+                                        <i class="fa fa-code" ng-switch-when="0"></i>
+                                        <i class="fa fa-laptop" ng-switch-when="1"></i>
+                                        <i class="fa fa-github" ng-switch-when="2"></i>
+                                        <i class="fa fa-pencil" ng-switch-when="3"></i>
+                                    </div>
+                                    <div class="blog-title text-capitalize">{{ club.title }} club</div>
                                 </div>
                                 <div class="blog-text">
                                     <p>
+                                        {{ $index }}
                                         {{ club.desc }}
-                                        <a href="#">View More</a>
+                                        <a ng-href="/club/{{ club.title }}">View More</a>
                                     </p>
                                 </div>
                             </div>
@@ -38,9 +44,9 @@
         <div class="row">
             <div class="col-xs-12 mb">
                 <!-- WHITE PANEL - TOP USER -->
-                <div class="white-panel">
-                    <div class="white-header">
-                        <h5>Ongoing Events</h5>
+                <div class="white-panel bg-transparent">
+                    <div class="white-header bg-orange">
+                        <h5 class="text-white">Ongoing Events</h5>
                     </div>
                     <div class="row">
                         <div class="col-sm-4 mb" ng-repeat="event in events">
@@ -54,10 +60,10 @@
                                         {{ event.desc }}
                                         <!-- <a href="#">View Event</a> -->
                                         <br/>
-                                        <button type="button" class="btn btn-theme">
+                                        <a class="btn btn-theme" ng-href="/events/{{ event.title | lowercase }}">
                                             <i class="fa fa-cog"></i>
                                             View Event
-                                        </button>
+                                        </a>
                                     </p>
                                 </div>
                             </div>

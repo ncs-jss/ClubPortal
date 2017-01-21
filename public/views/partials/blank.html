@@ -17,7 +17,7 @@
             <ul class="nav top-menu">
                 <!-- settings start -->
                 <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="/">
+                    <a data-toggle="dropdown" class="dropdown-toggle" ng-href="{{ path }}">
                         <i class="fa fa-tasks"></i>
                         <span class="badge bg-theme">4</span>
                     </a>
@@ -27,7 +27,7 @@
                             <p class="green">You have 4 pending tasks</p>
                         </li>
                         <li>
-                            <a href="/">
+                            <a ng-href="{{ path }}">
                                 <div class="task-info">
                                     <div class="desc">DashGum Admin Panel</div>
                                     <div class="percent">40%</div>
@@ -47,7 +47,7 @@
                 <!-- settings end -->
                 <!-- inbox dropdown start-->
                 <li id="header_inbox_bar" class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="/">
+                    <a data-toggle="dropdown" class="dropdown-toggle" ng-href="{{ path }}">
                         <i class="fa fa-envelope-o"></i>
                         <span class="badge bg-theme">5</span>
                     </a>
@@ -105,99 +105,47 @@
                 <h5 class="centered">Marcel Newman</h5>
                 <li class="mt">
                     <a href="/">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
                     </a>
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-desktop"></i>
-                        <span>UI Elements</span>
+                        <span>Clubs</span>
                     </a>
                     <ul class="sub">
                         <li>
-                            <a  href="general.html">General</a>
+                            <a  href="/club/web">Web Club</a>
                         </li>
                         <li>
-                            <a  href="buttons.html">Buttons</a>
+                            <a  href="/club/technical">Technical Club</a>
                         </li>
                         <li>
-                            <a  href="panels.html">Panels</a>
+                            <a  href="/club/design">Design Club</a>
+                        </li>
+                        <li>
+                            <a  href="/club/programming">Programming Club</a>
                         </li>
                     </ul>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-cogs"></i>
-                        <span>Components</span>
+                <li>
+                    <a href="/events">
+                        <i class="fa fa-dashboard"></i>
+                        <span>View Events</span>
                     </a>
-                    <ul class="sub">
-                        <li>
-                            <a  href="calendar.html">Calendar</a>
-                        </li>
-                        <li>
-                            <a  href="gallery.html">Gallery</a>
-                        </li>
-                        <li>
-                            <a  href="todo_list.html">Todo List</a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="sub-menu">
-                    <a class="active" href="javascript:;">
-                        <i class="fa fa-book"></i>
-                        <span>Extra Pages</span>
+                <li>
+                    <a href="/events/create">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Create Event</span>
                     </a>
-                    <ul class="sub">
-                        <li class="active">
-                            <a  href="blank.html">Blank Page</a>
-                        </li>
-                        <li>
-                            <a  href="login.html">Login</a>
-                        </li>
-                        <li>
-                            <a  href="lock_screen.html">Lock Screen</a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-tasks"></i>
-                        <span>Forms</span>
+                <li>
+                    <a href="/logout">
+                        <i class="fa fa-sign-out"></i>
+                        <span>Logout</span>
                     </a>
-                    <ul class="sub">
-                        <li>
-                            <a  href="form_component.html">Form Components</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-th"></i>
-                        <span>Data Tables</span>
-                    </a>
-                    <ul class="sub">
-                        <li>
-                            <a  href="basic_table.html">Basic Table</a>
-                        </li>
-                        <li>
-                            <a  href="responsive_table.html">Responsive Table</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Charts</span>
-                    </a>
-                    <ul class="sub">
-                        <li>
-                            <a  href="morris.html">Morris</a>
-                        </li>
-                        <li>
-                            <a  href="chartjs.html">Chartjs</a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
             <!-- sidebar menu end-->

@@ -1,4 +1,4 @@
-angular.module('ClubPortal', ['ngRoute', 'auth', 'LocalStorageModule', "ngScrollTo"]).config(function(localStorageServiceProvider, $locationProvider) {
+angular.module('ClubPortal', ['ngRoute', 'auth', 'events', 'club', 'LocalStorageModule', "ngScrollTo"]).config(function(localStorageServiceProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     localStorageServiceProvider.setPrefix('ClubPortal').setStorageType('localStorage');
 }).service('SessionService', function(localStorageService) {
@@ -43,7 +43,7 @@ angular.module('ClubPortal', ['ngRoute', 'auth', 'LocalStorageModule', "ngScroll
             });
         }
     });
-}).run(function($rootScope, $route, $templateCache, $http) {
+}).run(function($rootScope, $route, $templateCache, $http, $location) {
     console.log('test');
     $rootScope.d = function(elem) {
         elem = document.querySelector(elem);
@@ -52,4 +52,10 @@ angular.module('ClubPortal', ['ngRoute', 'auth', 'LocalStorageModule', "ngScroll
     $rootScope.dd = function(elem) {
         return document.querySelectorAll(elem);
     }
+    $rootScope.$on("$routeChangeStart", function() {
+        $(window).scrollTop(0);
+    });
+    $(window).on('beforeunload', function() {
+        $(window).scrollTop(0);
+    });
 });

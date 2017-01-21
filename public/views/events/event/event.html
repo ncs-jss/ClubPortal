@@ -1,0 +1,47 @@
+<!--
+    <pre-loader ng-hide="isLoaded"></pre-loader>
+-->
+<script src="assets/js/fancybox/jquery.fancybox.js"></script>
+<base-wrap/>
+<!-- <h3>
+    <i class="fa fa-angle-right"></i>
+    Web Club
+</h3> -->
+<div class="row mt events">
+    <div class="col-lg-9">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="weather pn">
+                    <i class="fa fa-code fa-4x"></i>
+                    <h2>{{ event.title | uppercase }}</h2>
+                    <h4></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /col-lg-9 END SECTION MIDDLE  -->
+    <!-- **********************************************************************************************************************************************************
+    RIGHT SIDEBAR CONTENT
+    *********************************************************************************************************************************************************** -->
+    <div class="col-lg-3 ds">
+        <h3>NOTIFICATIONS</h3>
+        <!-- First Member -->
+        <div class="desc" ng-repeat="user in users">
+            <div class="thumb">
+                <span class="badge bg-theme">
+                    <i class="fa fa-clock-o"></i>
+                </span>
+            </div>
+            <div class="details">
+                <p>
+                    <muted>{{ user.time }} Ago</muted>
+                    <br/>
+                    <a href="#">{{ user.name }}</a>
+                    submitted the poster.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- /col-lg-3  -->
+</div>
+</base-wrap>

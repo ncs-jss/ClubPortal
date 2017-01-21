@@ -1,0 +1,98 @@
+<!--
+    <pre-loader ng-hide="isLoaded"></pre-loader>
+-->
+<style type="text/css">
+    #eventCarousel{
+        height: 300px;
+    }
+    #eventCarousel .carousel-inner > .item > img,
+    #eventCarousel .carousel-inner > .item > a > img {
+        width: 100%;
+        margin: auto;
+        height: 300px;
+    }
+    .carousel-indicators {
+        width: 18%;
+        margin-left: -9%;
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
+<base-wrap/>
+<h3>
+    <i class="fa fa-angle-right"></i>
+    Events
+</h3>
+<div class="row mt club">
+    <div class="col-lg-12">
+        <div class="white-panel bg-transparent">
+            <div class="white-header bg-orange">
+                <h5 class="text-white">Ongoing Events</h5>
+            </div>
+            <div class="row">
+                <!-- <div class="col-sm-4 mb bg-orange">Ongoing Events</div> -->
+                <div class="col-sm-12 mb">
+                    <div id="eventCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#eventCarousel" data-slide-to="{{ $index }}" ng-repeat="event in ongoing" ng-class="{ 'active': $index == 0}"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item" ng-repeat="event in ongoing" ng-class="{ 'active': $index == 0}">
+                                <img src="/assets/img/blog-bg.jpg" alt="Chania"/>
+                                <div class="carousel-caption">
+                                    <a ng-href="/events/{{ event.title }}" class="text-white">
+                                        <h3>{{ event.title }}</h3>
+                                        <p>{{ event.desc }}</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#eventCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#eventCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 mb mt">
+        <!-- WHITE PANEL - TOP USER -->
+        <div class="white-panel bg-transparent">
+            <div class="white-header bg-blue">
+                <h5 class="text-white">All Events</h5>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 mb" ng-repeat="event in events">
+                    <div class="content-panel pn">
+                        <div id="blog-bg">
+                            <div class="badge badge-popular">View</div>
+                            <div class="blog-title">{{ event.title }}</div>
+                        </div>
+                        <div class="blog-text">
+                            <p>
+                                {{ event.desc }}
+                                <!-- <a href="#">View Event</a> -->
+                                <br/>
+                                <button type="button" class="btn btn-theme">
+                                    <i class="fa fa-cog"></i>
+                                    View Event
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</base-wrap>
