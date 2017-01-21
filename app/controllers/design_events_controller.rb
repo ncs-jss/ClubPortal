@@ -46,6 +46,6 @@ class DesignEventsController < ApplicationController
 	end
 
 	def event_params
-	  params.require(:design_event).permit(:title, :desc, :start_time, :end_time)
+	  params.require(:design_event).permit(:title, :desc, :image_url, :start_time, :end_time)
 	end
 end
