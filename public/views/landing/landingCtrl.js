@@ -1,4 +1,4 @@
-angular.module('auth').controller('landingCtrl', function($scope, $location, authFactory, localStorageService, $routeParams, SessionService) {
+angular.module('auth').controller('landingCtrl', function($scope, $location, authFactory, eventsFactory, localStorageService, $routeParams, SessionService) {
     $scope.clubs = [{
         title: "web",
         desc: "Lorem"
@@ -12,23 +12,27 @@ angular.module('auth').controller('landingCtrl', function($scope, $location, aut
         title: "programming",
         desc: "Ipsum"
     }];
-    $scope.events = [{
-        title: "Event 1",
-        desc: "Lorem"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }];
+    // $scope.events = [{
+    //     title: "Event 1",
+    //     desc: "Lorem"
+    // }, {
+    //     title: "Event 1",
+    //     desc: "Ipsum"
+    // }, {
+    //     title: "Event 1",
+    //     desc: "Ipsum"
+    // }, {
+    //     title: "Event 1",
+    //     desc: "Ipsum"
+    // }, {
+    //     title: "Event 1",
+    //     desc: "Ipsum"
+    // }, {
+    //     title: "Event 1",
+    //     desc: "Ipsum"
+    // }];
+    eventsFactory.getList().then(function(data) {
+        console.log(data.data);
+        $scope.events = data.data;
+    });
 });

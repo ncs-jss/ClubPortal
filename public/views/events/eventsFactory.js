@@ -6,6 +6,9 @@ angular.module('events').factory('eventsFactory', function($http, $rootScope) {
         },
         getList: function(params) {
             return $http.get(base);
+        },
+        get: function(id) {
+            return $http.get(base + id);
         }
     }
 });

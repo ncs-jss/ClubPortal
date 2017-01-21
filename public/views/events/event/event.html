@@ -11,14 +11,14 @@
     <div class="col-lg-9">
         <div class="row">
             <div class="col-xs-12">
-                <div class="weather pn">
-                    <i class="fa fa-code fa-4x"></i>
+                <div class="weather pn" style="background-image: url('{{ event.image_url }}')">
+                    <i class="fa fa-pencil fa-4x"></i>
                     <h2>{{ event.title | uppercase }}</h2>
                     <h4></h4>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row hidden">
             <div class="col-xs-12">
                 <form name="form">
                     <button class="button" ngf-select ng-model="coverImage" name="coverImage" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"  ngf-capture="'camera'">
@@ -30,6 +30,28 @@
                     <div ngf-drop ng-model="coverImage" class="drop-box">Drop</div>
                     <button type="submit" ng-click="uploadImg()">submit</button>
                 </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 mt mb">
+                <div class="white-panel">
+                    <div class="white-header bg-orange">
+                        <h5 class="text-white">Description</h5>
+                    </div>
+                    <div class="row">
+                        <p>{{ event.desc }}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Starts At</strong>
+                            <span class="ml">{{ event.start_time | date:'medium' }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Ends At</strong>
+                            <span class="mr">{{ event.end_time | date:'medium' }}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

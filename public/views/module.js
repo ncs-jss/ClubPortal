@@ -1,4 +1,5 @@
-angular.module('ClubPortal', ['ngRoute', 'auth', 'events', 'club', 'LocalStorageModule', 'ngFileUpload', '720kb.datepicker', 'ngScrollTo']).config(function(localStorageServiceProvider, $locationProvider) {
+angular.module('ClubPortal', ['ngRoute', 'auth', 'events', 'club', 'LocalStorageModule', 'ngFileUpload', 'ui.bootstrap.datetimepicker', 'ngScrollTo']).config(function(localStorageServiceProvider, $locationProvider) {
+    // 720kb.datepicker'
     $locationProvider.html5Mode(true);
     localStorageServiceProvider.setPrefix('ClubPortal').setStorageType('localStorage');
 }).service('SessionService', function(localStorageService) {
@@ -44,7 +45,6 @@ angular.module('ClubPortal', ['ngRoute', 'auth', 'events', 'club', 'LocalStorage
         }
     });
 }).run(function($rootScope, $route, $templateCache, $http, $location) {
-    console.log('test');
     $rootScope.baseUrl = "https://club-portal.herokuapp.com/api/v1/";
     $rootScope.d = function(elem) {
         elem = document.querySelector(elem);
