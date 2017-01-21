@@ -66,13 +66,13 @@
         <div class="row">
             <div class="col-xs-12 mt mb">
                 <div class="white-panel bg-transparent">
-                    <div class="white-header bg-orange">
+                    <div class="white-header bg-orange" ng-if="club.events.length> 0">
                         <h5 class="text-white">Ongoing Events</h5>
                     </div>
                     <div class="row">
                         <!-- <div class="col-sm-4 mb bg-orange">Ongoing Events</div> -->
                         <div class="col-sm-12 mb">
-                            <div id="eventCarousel" class="carousel slide" data-ride="carousel">
+                            <div id="eventCarousel" class="carousel slide" data-ride="carousel" ng-if="club.events.length> 0">
                                 <!-- Indicators -->
                                 <ol class="carousel-indicators">
                                     <li data-target="#eventCarousel" data-slide-to="{{ $index }}" ng-repeat="event in club.events" ng-class="{ 'active': $index == 0}"></li>
@@ -98,6 +98,10 @@
                                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
+                            </div>
+                            <div class="weather-3 centered ng-scope pn empty-panel bg-orange" ng-if="club.events.length ==  0">
+                                <i class="fa fa-battery-empty"></i>
+                                <h1>NO ONGOING EVENTS</h1>
                             </div>
                         </div>
                     </div>

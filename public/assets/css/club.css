@@ -73,6 +73,10 @@ body {
     height: 300px;
 }
 
+.empty-panel i {
+    margin-top: 55px;
+}
+
 @media (max-width: 768px) {
     .btn-responsive {
         padding: 2px 4px;

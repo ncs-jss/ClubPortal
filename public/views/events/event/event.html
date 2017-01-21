@@ -18,6 +18,20 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <form name="form">
+                    <button class="button" ngf-select ng-model="coverImage" name="coverImage" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"  ngf-capture="'camera'">
+                        <!-- ngf-dimensions="$width > 1000 || $height > 400" -->
+                        Select
+                    </button>
+                    <!-- ngf-resize="{width: 100, height: 100}" -->
+                    Drop files:
+                    <div ngf-drop ng-model="coverImage" class="drop-box">Drop</div>
+                    <button type="submit" ng-click="uploadImg()">submit</button>
+                </form>
+            </div>
+        </div>
     </div>
     <!-- /col-lg-9 END SECTION MIDDLE  -->
     <!-- **********************************************************************************************************************************************************
