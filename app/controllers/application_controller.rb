@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include DeviseTokenAuth::Concerns::SetUserByToken
 
   def angular
-    render :file => 'public/views/index.html'
+    render :file => 'public/index.html'
   end
 
   def find_event_and_student
