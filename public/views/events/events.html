@@ -42,7 +42,7 @@
                             <div class="item" ng-repeat="event in ongoing" ng-class="{ 'active': $index == 0}">
                                 <img ng-src="{{ event.image_url }}" alt="{{ event.title }}"/>
                                 <div class="carousel-caption">
-                                    <a ng-href="/events/{{ event.title }}" class="text-white">
+                                    <a ng-href="/events/{{ event.id }}" class="text-white">
                                         <h3>{{ event.title }}</h3>
                                         <p>{{ event.desc }}</p>
                                     </a>
@@ -83,10 +83,10 @@
                                 {{ event.desc }}
                                 <!-- <a href="#">View Event</a> -->
                                 <br/>
-                                <button type="button" class="btn btn-theme">
+                                <a class="btn btn-theme" ng-href="{{ event.id }}">
                                     <i class="fa fa-cog"></i>
                                     View Event
-                                </button>
+                                </a>
                             </p>
                         </div>
                     </div>
