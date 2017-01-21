@@ -5,7 +5,7 @@ angular.module('events', []).config(function($routeProvider) {
     }).when('/events/create', {
         templateUrl: '/views/events/create/create.html',
         controller: 'createCtrl'
-    }).when('/events/:name', {
+    }).when('/events/:id', {
         templateUrl: '/views/events/event/event.html',
         controller: 'eventCtrl'
     })
