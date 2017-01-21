@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20170109202905) do
     t.string   "description"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "total_submissions"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "total_submissions", default: 0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "students", force: :cascade do |t|
