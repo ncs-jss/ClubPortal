@@ -11,6 +11,13 @@ angular.module('club').controller('createCtrl', function($scope, $location, even
     $scope.createEvent = function(form) {
         console.info($scope.event);
         if (form.$valid) {
+            var x = {
+                design_event: $scope.event
+            }
+            eventsFactory.create(x).then(function(data) {
+                console.log(data.data);
+                if (data.data.status === "1") {} else {}
+            });
             console.log($scope.event);
         }
     }
