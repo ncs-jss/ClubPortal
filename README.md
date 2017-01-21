@@ -38,7 +38,7 @@ Example params:
 {
 	"design_event":
 	{
-		"name":"Designathon",
+		"title":"Designathon",
 		"description": "...........................",
 		"start_time" : "2017-01-09T23:03:18.806Z",
 		"end_time": "2017-01-15T23:03:18.806Z"

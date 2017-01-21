@@ -39,13 +39,13 @@ class DesignEventsController < ApplicationController
 	private
 
 	def set_params
-	  @name        = params[:name]
-    @description = params[:description]
+	  @title        = params[:title]
+    @desc = params[:desc]
     @start_time  = params[:start_time]
     @end_time    = params[:end_time]
 	end
 
 	def event_params
-	  params.require(:design_event).permit(:name, :description, :start_time, :end_time)
+	  params.require(:design_event).permit(:title, :desc, :start_time, :end_time)
 	end
 end
