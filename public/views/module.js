@@ -1,5 +1,5 @@
 angular.module('ClubPortal', ['ngRoute', 'auth', 'events', 'club', 'LocalStorageModule', 'ngFileUpload', 'ui.bootstrap.datetimepicker', 'ngScrollTo']).config(function(localStorageServiceProvider, $locationProvider) {
-    // 720kb.datepicker'
+    // 'ng-token-auth'
     $locationProvider.html5Mode(true);
     localStorageServiceProvider.setPrefix('ClubPortal').setStorageType('localStorage');
 }).service('SessionService', function(localStorageService) {

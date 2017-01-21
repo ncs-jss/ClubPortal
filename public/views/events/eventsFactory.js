@@ -9,6 +9,9 @@ angular.module('events').factory('eventsFactory', function($http, $rootScope) {
         },
         get: function(id) {
             return $http.get(base + id);
+        },
+        save: function(id, data) {
+            return $http.put((base + id), data);
         }
     }
 });
