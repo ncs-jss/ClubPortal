@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>angular-eonasdan-datetimepicker</title>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+    <!-- endinject -->
+</head>
+
+<body ng-app="plunker">
+
+<div ng-controller="controller as vm">
+
+    <div class="well">
+        <h3>Angular-eonasdan-datetimepicker</h3>
+        <p style="margin: -10px 0 0 0;">
+            https://github.com/atais/angular-eonasdan-datetimepicker</p>
+        <br>
+
+        <form name="dates_form">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group" ng-class="{ 'has-error': dates_form.dateFrom.$invalid }">
+                        <label for="dateFrom">From</label>
+                        <div class="input-group">
+                            <input type="text" name="dateFrom" id="dateFrom" class="form-control"
+                                   datetimepicker ng-model="vm.dateFrom" options="vm.options"
+                                   validate-before="dates_form.dateTo">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group" ng-class="{ 'has-error': dates_form.dateTo.$invalid }">
+                        <label for="dateTo">To</label>
+                        <div class="input-group">
+                            <input type="text" name="dateTo" id="dateTo" class="form-control"
+                                   datetimepicker ng-model="vm.dateTo" options="vm.options"
+                                   validate-after="dates_form.dateFrom">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<!-- endinject -->
+<script src="../dist/angular-eonasdan-datetimepicker.js"></script>
+<script src="double-validation.js"></script>
+</body>
+</html>

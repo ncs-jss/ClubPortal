@@ -1,0 +1,43 @@
+{
+  "name": "angular-eonasdan-datetimepicker",
+  "version": "0.3.8",
+  "author": {
+    "name": "Michał Siatkowski",
+    "email": "atais.jr@gmail.com"
+  },
+  "description": "A wrapper directive around the bootstrap-datetimepicker component.",
+  "main": "dist/angular-eonasdan-datetimepicker.js",
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "datetimepicker",
+    "directive",
+    "wrapper"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/atais/angular-eonasdan-datetimepicker.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/atais/angular-eonasdan-datetimepicker",
+  "peerDependencies": {
+    "angular": "*",
+    "bootstrap": "*",
+    "eonasdan-bootstrap-datetimepicker": "~4",
+    "moment": "*",
+    "jquery": "~2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.9.1",
+    "gulp-inject": "^3.0.0",
+    "run-sequence": "^1.1.5",
+    "gulp-debug": "^2.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-bower": "^0.0.13",
+    "main-bower-files": "^2.11.1"
+  }
+}

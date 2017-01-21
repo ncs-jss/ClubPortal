@@ -10,6 +10,7 @@
         <link href="/assets/css/bootstrap.css" rel="stylesheet"/>
         <!--external css-->
         <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
         <link href="/assets/lineicons/style.css" rel="stylesheet"/>
         <!-- Custom styles for this template -->
         <link href="/assets/css/style.css" rel="stylesheet"/>
@@ -31,21 +32,24 @@
     <body ng-cloak>
         <!-- Route Content -->
         <div ng-view ng-cloak></div>
-        <!-- <ng-include src=" '/views/partials/blank.html' "></ng-include> -->
         <!-- Vendor -->
         <script src="/vendor/angular/angular.min.js"></script>
+        <script src="/vendor/jquery/dist/jquery.min.js"></script>
         <script src="/vendor/angular-route/angular-route.min.js"></script>
         <script src="/vendor/angular-permission/dist/angular-permission.min.js"></script>
         <script src="/vendor/angular-permission/dist/angular-permission-ng.min.js"></script>
         <script src="/vendor/angular-local-storage/dist/angular-local-storage.min.js"></script>
         <script src="/vendor/ng-scrollto/ng-scrollto.js"></script>
-        <!-- <script src="/vendor/angular-sanitize/angular-sanitize.min.js"></script> -->
-        <script src="/assets/js/jquery.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/vendor/moment/min/moment.min.js"></script>
+        <script src="/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <!-- <script src="/vendor/angular-bootstrap-datetimepicker-directive/angular-bootstrap-datetimepicker-directive.min.js"></script> -->
+        <script src="/vendor/angular-eonasdan-datetimepicker/dist/angular-eonasdan-datetimepicker.min.js"></script>
+        <!-- <script src="/assets/js/jquery.js"></script> -->
         <script src="/assets/js/jquery-ui-1.9.2.custom.min.js"></script>
         <script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
         <script src="/vendor/ng-scrollto/jquery.scrollintoview.min.js"></script>
-        <script class="include" type="text/javascript" src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
         <script src="/assets/js/jquery.scrollTo.min.js"></script>
         <script src="/assets/js/jquery.backstretch.min.js"></script>
         <script src="/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
@@ -60,6 +64,7 @@
         <script src="/views/clubs/module.js"></script>
         <script src="/views/clubs/clubCtrl.js"></script>
         <script src="/views/events/module.js"></script>
+        <script src="/views/events/eventsFactory.js"></script>
         <script src="/views/events/eventsCtrl.js"></script>
         <script src="/views/events/event/eventCtrl.js"></script>
         <script src="/views/events/create/createCtrl.js"></script>

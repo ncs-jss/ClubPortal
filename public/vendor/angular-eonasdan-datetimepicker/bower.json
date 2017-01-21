@@ -1,0 +1,64 @@
+{
+  "name": "angular-eonasdan-datetimepicker",
+  "version": "0.3.8",
+  "authors": [
+    "Atais <atais.jr@gmail.com>"
+  ],
+  "description": "A wrapper directive around the bootstrap-datetimepicker component.",
+  "main": "dist/angular-eonasdan-datetimepicker.js",
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "datetimepicker",
+    "directive",
+    "wrapper"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/atais/angular-eonasdan-datetimepicker.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/atais/angular-eonasdan-datetimepicker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "*",
+    "bootstrap": "*",
+    "eonasdan-bootstrap-datetimepicker": "~4",
+    "moment": "*",
+    "jquery": "~2"
+  },
+  "overrides": {
+    "angular": {
+      "dependencies": {
+        "jquery": "*"
+      }
+    },
+    "moment": {
+      "dependencies": {
+        "jquery": "*"
+      }
+    },
+    "eonasdan-bootstrap-datetimepicker": {
+      "dependencies": {
+        "bootstrap": "*",
+        "jquery": "*",
+        "moment": "*"
+      }
+    },
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.min.css"
+      ],
+      "dependencies": {
+        "jquery": "*"
+      }
+    }
+  }
+}
