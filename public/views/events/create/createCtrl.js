@@ -28,7 +28,6 @@ angular.module('club').controller('createCtrl', function($scope, $location, even
                 });
                 if (data.data.status === "1") {} else {}
             });
-            console.log($scope.event);
         }
     }
 });
