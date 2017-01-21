@@ -1,29 +1,10 @@
-angular.module('events').controller('eventsCtrl', function($scope, $location, authFactory, localStorageService, $routeParams, SessionService) {
+angular.module('events').controller('eventsCtrl', function($scope, $location, eventsFactory, localStorageService, $routeParams, SessionService) {
     console.log($routeParams);
-    $scope.ongoing = [{
-        title: "Event 1",
-        desc: "Lorem"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }];
-    $scope.events = [{
-        title: "Event 1",
-        desc: "Lorem"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }, {
-        title: "Event 1",
-        desc: "Ipsum"
-    }];
+    $scope.ongoing = [];
+    $scope.events = [];
+    eventsFactory.getList().then(function(data) {
+        console.log(data.data);
+        $scope.events = data.data;
+        $scope.ongoing = $scope.events;
+    });
 });
