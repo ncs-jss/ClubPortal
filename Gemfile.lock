@@ -117,9 +117,11 @@ GEM
       rack (>= 1.0, < 3)
     orm_adapter (0.5.0)
     pg (0.19.0)
+    pg (0.19.0-x86-mingw32)
     pkg-config (1.1.7)
     puma (3.6.0)
     rack (2.0.1)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.1)
@@ -220,6 +222,7 @@ DEPENDENCIES
   omniauth
   pg
   puma (~> 3.0)
+  rack-cors
   rails (~> 5.0.0)
   sass-rails (~> 5.0)
   spring
