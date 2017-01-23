@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       end
 
       resources :design_events
+
+      #used PUT for better usage with angular
+      put '/design_events/:id', to: 'design_events#update'
+
       post '/design_events/:id/submit', to: 'design_events#submit'
     end
   end
