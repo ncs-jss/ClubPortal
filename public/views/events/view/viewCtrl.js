@@ -1,4 +1,4 @@
-angular.module('club').controller('eventCtrl', function($scope, $location, eventsFactory, localStorageService, $routeParams, SessionService) {
+angular.module('club').controller('viewCtrl', function($scope, $location, eventsFactory, localStorageService, $routeParams, SessionService) {
     console.log($routeParams);
     // $scope.event = {};
     $scope.users = [{

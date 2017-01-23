@@ -40,9 +40,9 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item" ng-repeat="event in ongoing" ng-class="{ 'active': $index == 0}">
-                                <img src="/assets/img/blog-bg.jpg" alt="Chania"/>
+                                <img ng-src="{{ event.image_url }}" alt="{{ event.title }}"/>
                                 <div class="carousel-caption">
-                                    <a ng-href="/events/{{ event.title }}" class="text-white">
+                                    <a ng-href="/events/{{ event.id }}" class="text-white">
                                         <h3>{{ event.title }}</h3>
                                         <p>{{ event.desc }}</p>
                                     </a>
@@ -74,7 +74,7 @@
             <div class="row">
                 <div class="col-sm-3 mb" ng-repeat="event in events">
                     <div class="content-panel pn">
-                        <div id="blog-bg">
+                        <div id="blog-bg" style="background-image: url('{{ event.image_url }}')">
                             <div class="badge badge-popular">View</div>
                             <div class="blog-title">{{ event.title }}</div>
                         </div>
@@ -83,10 +83,10 @@
                                 {{ event.desc }}
                                 <!-- <a href="#">View Event</a> -->
                                 <br/>
-                                <button type="button" class="btn btn-theme">
+                                <a class="btn btn-theme" ng-href="/events/{{ event.id }}">
                                     <i class="fa fa-cog"></i>
                                     View Event
-                                </button>
+                                </a>
                             </p>
                         </div>
                     </div>

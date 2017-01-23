@@ -80,9 +80,9 @@
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
                                     <div class="item" ng-repeat="event in club.events" ng-class="{ 'active': $index == 0}">
-                                        <img src="/assets/img/blog-bg.jpg" alt="Chania"/>
+                                        <img ng-src="{{ event.image_url }}" alt="Chania"/>
                                         <div class="carousel-caption">
-                                            <a ng-href="/events/{{ event.title }}" class="text-white">
+                                            <a ng-href="/events/{{ event.id }}" class="text-white">
                                                 <h3>{{ event.title }}</h3>
                                                 <p>{{ event.desc }}</p>
                                             </a>

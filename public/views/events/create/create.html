@@ -10,20 +10,30 @@
                 Create Event
             </h4>
             <form class="form-horizontal style-form" name="createForm" ng-submit="createEvent(createForm)" novalidate>
-                <div class="form-group">
+                <div class="form-group" ng-class="{'has-error':createForm.Name.$dirty && createForm.Name.$invalid}">
                     <label class="col-sm-2 col-sm-2 control-label">Event Name</label>
                     <div class="col-sm-4">
-                        <input type="text" name="Name" ng-model="event.title" class="form-control" placeholder="Event Name" required/>
+                        <div class="input-group">
+                            <input type="text" name="Name" ng-model="event.title" class="form-control" placeholder="Event Name" required/>
+                            <span class="input-group-addon">
+                                <i class="fa fa-info"></i>
+                            </span>
+                        </div>
                     </div>
                     <span class="help-block" ng-show="createForm.Name.$dirty && createForm.Name.$error.required">
                         Event Name is
                         <strong>Required</strong>
                     </span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" ng-class="{'has-error':createForm.Image.$dirty && createForm.Image.$invalid}">
                     <label class="col-sm-2 col-sm-2 control-label">Event Image</label>
                     <div class="col-sm-4">
-                        <input type="url" ng-model="event.image_url" name="Image" class="form-control" placeholder="Event Image" required/>
+                        <div class="input-group">
+                            <input type="url" class="form-control" ng-model="event.image_url" name="Image" placeholder="Event Image" required/>
+                            <span class="input-group-addon">
+                                <i class="fa fa-picture-o"></i>
+                            </span>
+                        </div>
                     </div>
                     <span class="help-block" ng-show="createForm.Image.$dirty && createForm.Image.$error.required">
                         Event Image Url is
@@ -34,13 +44,13 @@
                         <strong>Incorrect</strong>
                     </span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" ng-class="{'has-error':createForm.Start.$dirty && createForm.Name.$invalid}">
                     <div class="dropdown">
                         <label class="col-sm-2 col-sm-2 control-label">Start Time</label>
                         <div class="col-sm-4">
                             <a class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#" href="#">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" ng-model="event.start_time" placeholder="Start Time"/>
+                                    <input type="text" class="form-control" ng-model="event.start_time" placeholder="Start Time" name="Start" required/>
                                     <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-calendar"></i>
                                     </span>
@@ -51,15 +61,15 @@
                             </ul>
                         </div>
                     </div>
-                    <span class="help-block">Gonna Use Datepicker</span>
+                    <span class="help-block" ng-show="createForm.Start.$error.required">Select Start Time</span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" ng-class="{'has-error':createForm.End.$dirty && createForm.Name.$invalid}">
                     <div class="dropdown">
-                        <label class="col-sm-2 col-sm-2 control-label">End TIme</label>
+                        <label class="col-sm-2 col-sm-2 control-label">End Time</label>
                         <div class="col-sm-4">
                             <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" ng-model="event.end_time" placeholder="End Time"/>
+                                    <input type="text" class="form-control" ng-model="event.end_time" placeholder="End Time" name="End" required/>
                                     <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-calendar"></i>
                                     </span>
@@ -70,23 +80,50 @@
                             </ul>
                         </div>
                     </div>
-                    <span class="help-block">Gonna Use Datepicker</span>
+                    <span class="help-block" ng-show="createForm.End.$error">Select End Time</span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" ng-class="{'has-error':createForm.Description.$dirty && createForm.Description.$invalid}">
                     <label class="col-sm-2 col-sm-2 control-label">Description</label>
                     <div class="col-sm-4">
-                        <input type="text" ng-model="event.desc" name="Desc" class="form-control" placeholder="Description" required/>
+                        <textarea type="text" ng-model="event.desc" name="Desc" class="form-control" placeholder="Description" required></textarea>
                         <span class="help-block" ng-show="createForm.Desc.$dirty && createForm.Desc.$error.required">
                             Event Description is
                             <strong>Required</strong>
                         </span>
                     </div>
                 </div>
+                <div class="form-group" ng-class="{'has-error':createForm.Club.$dirty && createForm.Club.$invalid}">
+                    <label class="col-sm-2 col-sm-2 control-label">Select Club:</label>
+                    <div class="col-sm-4">
+                        <select ng-model="event.club" name="Club" class="form-control" required>
+                            <option selected="selected" value="">Please Select Club</option>
+                            <option value="1">Web Club</option>
+                            <option value="2">Design Club</option>
+                            <option value="3">Technical Club</option>
+                            <option value="4">Programming Club</option>
+                        </select>
+                        {{ event.club }}
+                        <span class="help-block" ng-show="createForm.Club.$dirty && createForm.Club.$error.required">
+                            Event's Club is
+                            <strong>Required</strong>
+                        </span>
+                    </div>
+                </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-theme02 pull-right" ng-disabled="createForm.$invalid">
-                        <i class="fa fa-check"></i>
-                        Button
-                    </button>
+                    <div class="col-sm-submit pull-right">
+                        <button type="submit" class="btn btn-theme02 pull-right mr" ng-disabled="createForm.$invalid">
+                            <i class="fa fa-check"></i>
+                            Create
+                        </button>
+                    </div>
+                    <div class="col-sm-6 ml" ng-show="createForm.$invalid">
+                        <p>
+                            <strong>Please Correct The Errors</strong>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 ml" ng-show="createForm.$valid">
+                        <p>Click on Create Button To Upload Event</p>
+                    </div>
                 </div>
             </form>
         </div>
