@@ -1,6 +1,6 @@
 angular.module('club').controller('viewCtrl', function($scope, $location, eventsFactory, localStorageService, $routeParams, SessionService) {
     console.log($routeParams);
-    // $scope.event = {};
+    $scope.event = {};
     $scope.users = [{
         name: "Aditya",
         time: "2 mins"

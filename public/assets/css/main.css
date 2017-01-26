@@ -10,12 +10,21 @@
     align-items: center;
 }
 
+.header-title {
+    width: 200px;
+    padding-left: 30px !important;
+}
+
+.header-title h5 {
+    text-align: left;
+}
+
 .landing .white-panel i {
     color: inherit;
 }
 
 .landing .white-panel {
-    border-top: 1px solid rgba(198, 198, 198, 0.64);
+    /*border-top: 1px solid rgba(198, 198, 198, 0.64);*/
 }
 
 .landing .club-row .badge-popular {

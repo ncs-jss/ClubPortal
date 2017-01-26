@@ -12,28 +12,26 @@
             <div class="col-xs-12 mb">
                 <!-- WHITE PANEL - TOP USER -->
                 <div class="white-panel bg-transparent">
-                    <div class="white-header bg-blue">
+                    <div class="white-header bg-blue header-title">
                         <h5 class="text-white">Clubs</h5>
                     </div>
-                    <div class="row flex flex-center-h">
-                        <div class="col-lg-3 col-md-6 col-sm-4 mb" ng-repeat="club in clubs" ng-switch="$index">
-                            <!-- ng-class-even="'col-lg-offset-1'" -->
-                            <div class="content-panel pn">
-                                <div id="blog-bg">
-                                    <div class="badge badge-popular">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-4 mb" ng-repeat="club in clubs" ng-switch="$index">
+                            <div class="content-panel pn" style="height: 218px;padding-bottom: 0;">
+                                <div id="spotify">
+                                    <div class="col-xs-4 col-xs-offset-8">
+                                        <a class="btn btn-sm btn-clear-g" ng-href="/club/{{ club.title }}">View More</a>
+                                    </div>
+                                    <div class="sp-title">
+                                        <h3 class="text-capitalize">{{ club.title }} club</h3>
+                                    </div>
+                                    <div class="play">
+                                        <!-- <i class="fa fa-play-circle"></i> -->
                                         <i class="fa fa-code" ng-switch-when="0"></i>
                                         <i class="fa fa-laptop" ng-switch-when="1"></i>
                                         <i class="fa fa-github" ng-switch-when="2"></i>
                                         <i class="fa fa-pencil" ng-switch-when="3"></i>
                                     </div>
-                                    <div class="blog-title text-capitalize">{{ club.title }} club</div>
-                                </div>
-                                <div class="blog-text">
-                                    <p>
-                                        {{ $index }}
-                                        {{ club.desc }}
-                                        <a ng-href="/club/{{ club.title }}">View More</a>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +43,7 @@
             <div class="col-xs-12 mb">
                 <!-- WHITE PANEL - TOP USER -->
                 <div class="white-panel bg-transparent">
-                    <div class="white-header bg-orange">
+                    <div class="white-header bg-orange header-title">
                         <h5 class="text-white">Ongoing Events</h5>
                     </div>
                     <div class="row">
@@ -58,7 +56,6 @@
                                 <div class="blog-text">
                                     <p>
                                         {{ event.desc }}
-                                        <!-- <a href="#">View Event</a> -->
                                         <br/>
                                         <a class="btn btn-theme" ng-href="/events/{{ event.id }}">
                                             <i class="fa fa-cog"></i>
