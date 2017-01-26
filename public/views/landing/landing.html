@@ -18,9 +18,9 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-4 mb" ng-repeat="club in clubs" ng-switch="$index">
                             <div class="content-panel pn" style="height: 218px;padding-bottom: 0;">
-                                <div id="spotify">
+                                <div id="spotify" style="background-image:url(/assets/img/clubs/{{ club.title }}.jpg)">
                                     <div class="col-xs-4 col-xs-offset-8">
-                                        <a class="btn btn-sm btn-clear-g" ng-href="/club/{{ club.title }}">View More</a>
+                                        <a class="btn btn-sm btn-theme03 mt pull-right" ng-href="/club/{{ club.title }}">View More</a>
                                     </div>
                                     <div class="sp-title">
                                         <h3 class="text-capitalize">{{ club.title }} club</h3>

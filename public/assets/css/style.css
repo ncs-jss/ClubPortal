@@ -1216,6 +1216,7 @@ PANELS CONFIGURATIONS
     background: url(../img/weather.jpg) no-repeat center top;
     text-align: center;
     background-position: center center;
+    background-size: cover;
 }
 
 .weather i {
