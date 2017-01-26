@@ -1,27 +1,58 @@
 angular.module('events').controller('createCtrl', function($scope, $location, eventsFactory, localStorageService, $routeParams, SessionService, $timeout) {
     console.log("r", $routeParams);
     $scope.event = {};
-    // $scope.event.club = 1;
-    if ($routeParams.club) {
-        $scope.event.club = $routeParams.club;
+    $scope.items = ["web", "technical", "programming", "design"];
+    $scope.club = $routeParams.club || "web";
+    $scope.startDateOnSetTime = function() {
+        $scope.$broadcast('start-date-changed');
+    }
+    $scope.endDateOnSetTime = function() {
+        $scope.$broadcast('end-date-changed');
+    }
+    $scope.startDateBeforeRender = function($dates) {
+        if ($scope.event.end_time) {
+            var activeDate = moment($scope.event.end_time);
+            $dates.filter(function(date) {
+                return date.localDateValue() >= activeDate.valueOf()
+            }).forEach(function(date) {
+                date.selectable = false;
+            })
+        }
+    }
+    $scope.endDateBeforeRender = function($view, $dates) {
+        if ($scope.event.start_time) {
+            var activeDate = moment($scope.event.start_time).subtract(1, $view).add(1, 'minute');
+            $dates.filter(function(date) {
+                return date.localDateValue() <= activeDate.valueOf()
+            }).forEach(function(date) {
+                date.selectable = false;
+            })
+        }
     }
     $scope.createEvent = function(form) {
+        $scope.event.club = $(".clubSelect").val();
         console.info($scope.event);
         if (form.$valid) {
             var x = {
                 design_event: $scope.event
             }
-            eventsFactory.create(x).then(function(data) {
-                console.log(data.data);
-                var event = data.data;
+            eventsFactory.create(x).then(function(res) {
+                console.log(res.data);
+                var event = res.data;
                 var link = "/events/" + event.id;
-                var unique_id = $.gritter.add({
+                $.gritter.add({
                     title: 'Event Created!',
                     text: 'Check It Out <a href="' + link + '" style="color:#ffd777">Here</a>',
                     image: 'assets/img/ui-sam.jpg',
                     class_name: 'my-sticky-class'
                 });
-                if (data.data.status === "1") {} else {}
+                if (res.data.status === "1") {} else {}
+            });
+        } else {
+            $.gritter.add({
+                title: 'Incorrect Data!',
+                text: 'Please Fix The Errors',
+                class_name: 'my-sticky-class'
             });
         }
     }

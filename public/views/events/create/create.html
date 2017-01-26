@@ -50,18 +50,18 @@
                         <div class="col-sm-4">
                             <a class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#" href="#">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" ng-model="event.start_time" placeholder="Start Time" name="Start" required/>
+                                    <input type="text" class="form-control" readonly ng-model="event.start_time" placeholder="Start Time" name="Start" required/>
                                     <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-calendar"></i>
                                     </span>
                                 </div>
                             </a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                <datetimepicker data-ng-model="event.start_time" data-datetimepicker-config="{ dropdownSelector: '#dropdown1' }"/></datetimepicker>
+                                <datetimepicker data-ng-model="event.start_time" data-datetimepicker-config="{ dropdownSelector: '#dropdown1',renderOn: 'end-date-changed' }" data-on-set-time="startDateOnSetTime()" data-before-render="startDateBeforeRender($dates)"/></datetimepicker>
                             </ul>
                         </div>
                     </div>
-                    <span class="help-block" ng-show="createForm.Start.$error.required">Select Start Time</span>
+                    <span class="help-block" ng-show="createForm.Start.$dirty && createForm.Start.$error.required">Select Start Time</span>
                 </div>
                 <div class="form-group" ng-class="{'has-error':createForm.End.$dirty && createForm.Name.$invalid}">
                     <div class="dropdown">
@@ -69,18 +69,18 @@
                         <div class="col-sm-4">
                             <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" ng-model="event.end_time" placeholder="End Time" name="End" required/>
+                                    <input type="text" class="form-control" readonly ng-model="event.end_time" placeholder="End Time" name="End" required/>
                                     <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-calendar"></i>
                                     </span>
                                 </div>
                             </a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                <datetimepicker data-ng-model="event.end_time" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"/></datetimepicker>
+                                <datetimepicker data-ng-model="event.end_time" data-datetimepicker-config="{ dropdownSelector: '#dropdown2', renderOn: 'start-date-changed' }" data-on-set-time="endDateOnSetTime()" data-before-render="endDateBeforeRender($view, $dates, $leftDate, $upDate, $rightDate)"/></datetimepicker>
                             </ul>
                         </div>
                     </div>
-                    <span class="help-block" ng-show="createForm.End.$error">Select End Time</span>
+                    <span class="help-block" ng-show="createForm.End.$dirty && createForm.End.$error.required">Select End Time</span>
                 </div>
                 <div class="form-group" ng-class="{'has-error':createForm.Description.$dirty && createForm.Description.$invalid}">
                     <label class="col-sm-2 col-sm-2 control-label">Description</label>
@@ -95,14 +95,9 @@
                 <div class="form-group" ng-class="{'has-error':createForm.Club.$dirty && createForm.Club.$invalid}">
                     <label class="col-sm-2 col-sm-2 control-label">Select Club:</label>
                     <div class="col-sm-4">
-                        <select ng-model="event.club" name="Club" class="form-control" required>
-                            <option selected="selected" value="">Please Select Club</option>
-                            <option value="1">Web Club</option>
-                            <option value="2">Design Club</option>
-                            <option value="3">Technical Club</option>
-                            <option value="4">Programming Club</option>
+                        <select class="form-control clubSelect">
+                            <option ng-selected="{{ item == club }}" ng-repeat="item in items" value="{{ item }}">{{ item | uppercase }} CLUB</option>
                         </select>
-                        {{ event.club }}
                         <span class="help-block" ng-show="createForm.Club.$dirty && createForm.Club.$error.required">
                             Event's Club is
                             <strong>Required</strong>
