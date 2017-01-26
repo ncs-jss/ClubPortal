@@ -27,9 +27,9 @@ angular.module('club').controller('clubCtrl', function($scope, $location, events
     //     desc: "Ipsum"
     // }];
     if ($scope.club.title === "design") {
-        eventsFactory.getList().then(function(data) {
-            console.log(data.data);
-            $scope.club.events = data.data;
+        eventsFactory.getList().then(function(res) {
+            console.log(res.data);
+            $scope.club.events = res.data;
         });
     }
     console.log($routeParams.name);

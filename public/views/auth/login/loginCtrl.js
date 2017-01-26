@@ -4,5 +4,6 @@ angular.module('auth').controller('loginCtrl', function($scope, $location, authF
         $.backstretch("/assets/img/login-bg.jpg", {
             speed: 500
         });
+        $scope.user = {}
     });
 });

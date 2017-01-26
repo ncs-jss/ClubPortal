@@ -31,6 +31,19 @@ body {
     left: 30px;
     top: -85px;
     z-index: 2;
+    width: 130px;
+    height: 130px;
+    background-size: cover;
+    background-image: url(../img/ncs.jpg);
+    background-position: center;
+    border: 5px solid #fff;
+    outline: 1px solid #eee;
+}
+
+.club .weather {
+    background: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.6)), url(http://hackncs.com/img/portfolio-03.jpeg) no-repeat center top;
+    background-size: cover;
+    background-position: center;
 }
 
 .profile .user h2 {
@@ -38,10 +51,10 @@ body {
     line-height: 20px;
     display: block;
     float: left;
-    margin: 4px 0px 0px 135px;
+    margin: 4px 0px 0px;
     position: absolute;
     top: -45px;
-    left: 30px;
+    left: 180px;
     z-index: 2;
     color: #fff;
     font-weight: bold;
