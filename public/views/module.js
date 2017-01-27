@@ -1,4 +1,4 @@
-angular.module('ClubPortal', ['ngRoute', 'auth', 'events', 'club', 'arena', 'LocalStorageModule', 'ngFileUpload', 'ui.bootstrap.datetimepicker', 'ngScrollTo', 'timer']).config(function (localStorageServiceProvider, $locationProvider) {
+angular.module('ClubPortal', ['ngRoute', 'auth', 'events', 'club', 'arena', 'LocalStorageModule', 'ngFileUpload', 'ui.bootstrap.datetimepicker', 'ngScrollTo', 'timer', 'ngSanitize']).config(function (localStorageServiceProvider, $locationProvider) {
     // 'ng-token-auth'
     $locationProvider.html5Mode(true);
     localStorageServiceProvider.setPrefix('ClubPortal').setStorageType('localStorage');
@@ -55,6 +55,9 @@ angular.module('ClubPortal', ['ngRoute', 'auth', 'events', 'club', 'arena', 'Loc
     }
     $rootScope.$on("$routeChangeStart", function () {
         $(window).scrollTop(0);
+        if ($.find('.backstretch')) {
+            $('.backstretch').remove();
+        }
     });
     $(window).on('beforeunload', function () {
         $(window).scrollTop(0);

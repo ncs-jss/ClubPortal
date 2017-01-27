@@ -19,7 +19,7 @@
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" ng-href="{{ path }}">
                         <i class="fa fa-tasks"></i>
-                        <span class="badge bg-theme">4</span>
+                        <span class="badge bg-important">4</span>
                     </a>
                     <ul class="dropdown-menu extended tasks-bar">
                         <div class="notify-arrow notify-arrow-green"></div>
@@ -49,7 +49,7 @@
                 <li id="header_inbox_bar" class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" ng-href="{{ path }}">
                         <i class="fa fa-envelope-o"></i>
-                        <span class="badge bg-theme">5</span>
+                        <span class="badge bg-important">5</span>
                     </a>
                     <ul class="dropdown-menu extended inbox">
                         <div class="notify-arrow notify-arrow-green"></div>
@@ -78,7 +78,7 @@
             <!--  notification end -->
         </div>
         <div class="top-menu">
-            <ul class="nav pull-right top-menu">
+            <ul class="nav pull-right top-menu" id="customNav">
                 <li>
                     <a class="logout" href="/logout">Logout</a>
                 </li>
@@ -94,7 +94,7 @@
     *********************************************************************************************************************************************************** -->
     <!--sidebar start-->
     <aside>
-        <div id="sidebar"  class="nav-collapse ">
+        <div id="sidebar"  class="nav-collapse bg-grey">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                 <p class="centered">

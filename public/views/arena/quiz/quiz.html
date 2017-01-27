@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="/assets/css/quiz.css"/>
 <base-wrap/>
-<div class="row mt events">
+<div class="row mt events" ng-show="quiz.start && !quiz.finish">
     <div class="col-lg-3 ds">
         <h3>QUESTIONS</h3>
         <!-- First Member -->
-        <div class="desc" ng-repeat="ques in questions" ng-click="selectQues(ques)" ng-disabled="!quiz.start">
+        <div class="desc" ng-repeat="ques in questions" ng-click="selectQues(ques,$index)">
             <div class="thumb">
                 <span class="badge bg-theme">
                     <i class="fa fa-clock-o"></i>
@@ -22,14 +22,83 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="showback">
-                    <h3>
-                        <i class="fa fa-angle-right"></i>
-                        Quiz
-                    </h3>
+                    <div class="row">
+                        <div class="col-md-4 ml">
+                            <h3>
+                                <i class="fa fa-angle-right"></i>
+                                Question {{ current.index+1 }}
+                            </h3>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="btn-group pull-right">
+                                <button class="btn btn-danger" ng-click="prevQues()">Prev</button>
+                                <button class="btn btn-success" ng-click="nextQues()">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt">
+                        <div class="col-md-11 ml">
+                            <h4 ng-bind-html="current.ques.question" style="line-height: 26px;"></h4>
+                        </div>
+                    </div>
+                    <div class="row mt">
+                        <div class="col-md-11 ml">
+                            <hr/>
+                            {{ current.ans }}
+                            <h4 style="font-weight: bold;">Options :</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="option in current.ques.options">
+                                    <div class="radio">
+                                        <label style="width: 100%;">
+                                            <input type="radio" name="optionsRadios" id="optionsRadios{{ $index }}" value="{{ $index }}" ng-model="current.ans"/>
+                                            <p ng-bind-html="option"></p>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row mt ml">
+                        <div class="col-md-3 ml">
+                            <div class="btn-group">
+                                <button class="btn btn-danger btn-lg" ng-click="prevQues()">Prev</button>
+                                <button class="btn btn-success btn-lg" ng-click="nextQues()">Next</button>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <button class="btn btn-info btn-lg pull-right" ng-click="finishQuiz()">Finish Quiz</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- /col-lg-9 END SECTION MIDDLE  -->
+</div>
+<div class="row mt" ng-show="!quiz.start  && !quiz.finish">
+    <div class="col-lg-12">
+        <div class="showback">
+            <h3>
+                <i class="fa fa-angle-right"></i>
+                Quiz
+            </h3>
+            <div class="row mr">
+                <button class="btn btn-primary pull-right" ng-click="startQuiz()">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt" ng-show="quiz.start && quiz.finish">
+    <div class="col-lg-12">
+        <div class="showback">
+            <h3>
+                <i class="fa fa-angle-right"></i>
+                You Successfully Completed The Quiz
+            </h3>
+            <div class="row mr">
+                <button class="btn btn-primary pull-right" ng-click="startQuiz()">Exit Quiz</button>
+            </div>
+        </div>
+    </div>
 </div>
 </base-wrap>

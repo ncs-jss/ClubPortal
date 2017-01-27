@@ -20,7 +20,10 @@
                             <div class="content-panel pn" style="height: 218px;padding-bottom: 0;">
                                 <div id="spotify" style="background-image:url(/assets/img/clubs/{{ club.title }}.jpg)">
                                     <div class="col-xs-4 col-xs-offset-8">
-                                        <a class="btn btn-sm btn-theme03 mt pull-right" ng-href="/club/{{ club.title }}"><i class="fa fa-plus"></i> View</a>
+                                        <a class="btn btn-sm btn-theme03 mt pull-right" ng-href="/club/{{ club.title }}">
+                                            <i class="fa fa-plus"></i>
+                                            View
+                                        </a>
                                     </div>
                                     <div class="sp-title">
                                         <h3 class="text-capitalize">{{ club.title }} club</h3>
@@ -40,31 +43,32 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-sm-4 mb" ng-repeat="event in events">
+                <div class="content-panel">
+                    <div id="profile-01" class="bg-grey" style="background-image: url('{{ event.image_url }}')">
+                        <h3>{{ event.title | uppercase }}</h3>
+                    </div>
+                    <a ng-href="/events/{{ event.id }}">
+                        <div class="profile-01 centered">
+                            <p>View Event</p>
+                        </div>
+                    </a>
+                    <div class="centered">
+                        <h6>
+                            <i class="fa fa-file-text"></i>
+                            <br/>
+                            <h6>{{ event.desc }}</h6>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-xs-12 mb">
                 <!-- WHITE PANEL - TOP USER -->
                 <div class="white-panel bg-transparent">
                     <div class="white-header bg-orange header-title">
                         <h5 class="text-white">Ongoing Events</h5>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4 mb" ng-repeat="event in events">
-                            <div class="content-panel pn">
-                                <div id="blog-bg" style="background-image: url('{{ event.image_url }}')">
-                                    <!-- <div class="badge badge-popular">View</div> -->
-                                    <div class="blog-title">{{ event.title }}</div>
-                                </div>
-                                <div class="blog-text">
-                                    <p>
-                                        {{ event.desc }}
-                                        <br/>
-                                        <a class="btn btn-theme" ng-href="/events/{{ event.id }}">
-                                            <i class="fa fa-cog"></i>
-                                            View Event
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
