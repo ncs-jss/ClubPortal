@@ -7,7 +7,7 @@
         <div class="desc" ng-repeat="ques in questions" ng-click="selectQues(ques,$index)">
             <div class="thumb">
                 <span class="badge bg-theme">
-                    <i class="fa fa-clock-o"></i>
+                    <i class="fa fa-circle"></i>
                 </span>
             </div>
             <div class="details">
@@ -96,7 +96,7 @@
                 You Successfully Completed The Quiz
             </h3>
             <div class="row mr">
-                <button class="btn btn-primary pull-right" ng-click="startQuiz()">Exit Quiz</button>
+                <a class="btn btn-primary pull-right" ng-href="/events/{{event.id}}">Exit Quiz</a>
             </div>
         </div>
     </div>

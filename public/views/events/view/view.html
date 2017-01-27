@@ -85,7 +85,7 @@
                     <!-- ng-if="event.status == 2" -->
                     <i class="fa fa-gamepad mb"></i>
                     <h3 class="text-white">
-                        <a class="btn btn-default" ng-href="/arena/quiz/{{ event.id }}">Participate</a>
+                        <a class="btn btn-default btn-lg" ng-href="/arena/quiz/{{ event.id }}">Participate</a>
                     </h3>
                 </div>
             </div>
@@ -118,6 +118,54 @@
                                 </div>
                                 <div class="panel-footer text-right">
                                     <!-- ng-show="event.status == 2" -->
+                                    <a class="btn btn-primary" ng-href="/arena/quiz/{{ event.id }}">Participate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row  mt mb">
+            <div class="col-sm-12">
+                <div class="showback">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <h4 class="panel-title">
+                                            <i class="fa fa-angle-right"></i>
+                                            Leaderboard
+                                        </h4>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <button data-toggle="collapse" data-target="#collapse2" class="btn btn-primary pull-right">View Leaderboard</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table class="table table-bordered table-striped table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>Name</th>
+                                                <th class="numeric">Score</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Aditya Agarwal</td>
+                                                <td class="numeric">100 Pts</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="panel-footer text-right">
+                                    <!-- ng-show="event.status == 2" -->
+                                    <button data-toggle="collapse" data-target="#collapse2" class="btn btn-warning pull-right ml">Collapse Leaderboard</button>
                                     <a class="btn btn-primary" ng-href="/arena/quiz/{{ event.id }}">Participate</a>
                                 </div>
                             </div>

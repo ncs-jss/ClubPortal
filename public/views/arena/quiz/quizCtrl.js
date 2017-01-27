@@ -15,7 +15,6 @@ angular.module('arena').controller('quizCtrl', function ($scope, $location, $roo
         }];
         // var ansList = Array.apply(null, Array($scope.questions.length)).map(Number.prototype.valueOf, -1);
         var ansList = [];
-        $scope.event = {};
         $scope.quiz = {
             start: false,
             finish: false,
@@ -28,7 +27,7 @@ angular.module('arena').controller('quizCtrl', function ($scope, $location, $roo
 
         function checkAns(index, ans) {
             console.log(index);
-            ansList[index] = ans;
+            ansList[index] = parseInt(ans);
         }
         // $scope.quiz.start = true;
         //Comment above line for production
@@ -60,6 +59,7 @@ angular.module('arena').controller('quizCtrl', function ($scope, $location, $roo
             $scope.current.ques = $scope.questions[$scope.current.index];
         }
         $scope.finishQuiz = function () {
+            checkAns($scope.current.index, $scope.current.ans);
             $(window).scrollTop(0);
             $scope.quiz.finish = true;
             console.log(ansList);
