@@ -1,4 +1,4 @@
-angular.module('events').controller('eventsCtrl', function($scope, $location, eventsFactory, localStorageService, $routeParams, SessionService) {
+angular.module('events').controller('eventsCtrl', function($scope, $rootScope, $location, eventsFactory, localStorageService, $routeParams, SessionService) {
     console.log($routeParams);
     $scope.ongoing = [];
     $scope.events = [];
@@ -6,5 +6,6 @@ angular.module('events').controller('eventsCtrl', function($scope, $location, ev
         console.log(data.data);
         $scope.events = data.data;
         $scope.ongoing = $scope.events;
+        $rootScope.$broadcast('data.loaded');
     });
 });

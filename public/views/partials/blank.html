@@ -157,10 +157,11 @@
     *********************************************************************************************************************************************************** -->
     <!--main content start-->
     <section id="main-content">
-        <section class="wrapper site-min-height">
+        <section class="wrapper site-min-height" ng-show="isLoaded">
             <div ng-transclude></div>
         </section>
         <!-- /wrapper  -->
+        <pre-loader ng-hide="isLoaded"></pre-loader>
     </section>
     <!-- /MAIN CONTENT  -->
     <!--main content end-->

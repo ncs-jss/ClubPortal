@@ -1,8 +1,12 @@
-angular.module('events').controller('createCtrl', function($scope, $location, eventsFactory, localStorageService, $routeParams, SessionService, $timeout) {
+angular.module('events').controller('createCtrl', function($scope, $rootScope, $location, eventsFactory, localStorageService, $routeParams, SessionService, $timeout) {
     console.log("r", $routeParams);
     $scope.event = {};
     $scope.items = ["web", "technical", "programming", "design"];
     $scope.club = $routeParams.club || "web";
+    $timeout(function() {
+        $rootScope.$broadcast('data.loaded');
+        console.log('test2');
+    });
     $scope.startDateOnSetTime = function() {
         $scope.$broadcast('start-date-changed');
     }

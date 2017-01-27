@@ -2,7 +2,7 @@ angular.module('ClubPortal').directive('preLoader', function() {
     return {
         restrict: 'E',
         replace: 'true',
-        template: '<div class="preloaderPage bg-dk-purple"><div class="preloader-box"><img class="preloader" src="/assets/img/preloader.gif" alt=""></div></div>'
+        template: '<div class="wrapper preloader"><i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i></div>'
     }
 }).directive('baseWrap', function() {
     return {

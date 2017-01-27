@@ -1,4 +1,4 @@
-angular.module('auth').controller('landingCtrl', function($scope, $location, authFactory, eventsFactory, localStorageService, $routeParams, SessionService) {
+angular.module('auth').controller('landingCtrl', function($scope, $rootScope, $location, authFactory, eventsFactory, localStorageService, $routeParams, SessionService) {
     $scope.clubs = [{
         title: "technical",
         desc: "Ipsum"
@@ -15,5 +15,6 @@ angular.module('auth').controller('landingCtrl', function($scope, $location, aut
     eventsFactory.getList().then(function(data) {
         console.log(data.data);
         $scope.events = data.data;
+        $rootScope.$broadcast('data.loaded');
     });
 });

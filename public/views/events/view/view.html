@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-md-2">
-                <button class="btn btn-success btn-block" data-toggle="modal" data-target="#uploadModal">Upload File</button>
+                <button class="btn btn-success btn-block hidden" data-toggle="modal" data-target="#uploadModal">Upload File</button>
             </div>
             <div class="col-xs-12 col-md-3">
                 <div class="btn-group btn-group-justified">
@@ -69,10 +69,60 @@
                 <div class="weather-3 centered ng-scope pn empty-panel bg-blue" ng-if="event.status == 3">
                     <i class="fa fa-clock-o mb"></i>
                     <h3 class="text-white">
-                    <!-- event.end_time -->
-                    <!-- end-time="1485935911454" -->
-                        <timer interval="1000" end-time="countdown" ><strong>{{ days }} </strong> day{{daysS}} &nbsp;<strong>{{ hhours }}</strong> hour{{hoursS}} &nbsp;<strong>{{ mminutes }} </strong> minute{{minutesS}} &nbsp;{{ seconds }}</timer>
+                        <!-- event.end_time -->
+                        <!-- end-time="1485935911454" -->
+                        <timer interval="1000" end-time="countdown">
+                            <strong>{{ days }}</strong>
+                            day{{ daysS }} &nbsp;
+                            <strong>{{ hhours }}</strong>
+                            hour{{ hoursS }} &nbsp;
+                            <strong>{{ mminutes }}</strong>
+                            minute{{ minutesS }} &nbsp;{{ seconds }}
+                        </timer>
                     </h3>
+                </div>
+                <div class="weather-3 centered ng-scope pn empty-panel bg-blue" ng-if="event.status == 1">
+                    <!-- ng-if="event.status == 2" -->
+                    <i class="fa fa-gamepad mb"></i>
+                    <h3 class="text-white">
+                        <a class="btn btn-default" ng-href="/arena/quiz/{{ event.id }}">Participate</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row  mt mb">
+            <div class="col-sm-12">
+                <div class="showback">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <h4 class="panel-title">
+                                            <i class="fa fa-angle-right"></i>
+                                            Rules
+                                        </h4>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <button data-toggle="collapse" data-target="#collapse1" class="btn btn-primary pull-right">View Rules</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">First item</li>
+                                        <li class="list-group-item">Second item</li>
+                                        <li class="list-group-item">Third item</li>
+                                    </ul>
+                                </div>
+                                <div class="panel-footer text-right">
+                                    <!-- ng-show="event.status == 2" -->
+                                    <a class="btn btn-primary" ng-href="/arena/quiz/{{ event.id }}">Participate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

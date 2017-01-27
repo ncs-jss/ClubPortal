@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+.bg-white {
+    background: #fff;
+}
+
 .header-title {
     width: 200px;
     padding-left: 30px !important;
@@ -17,6 +21,21 @@
 
 .header-title h5 {
     text-align: left;
+}
+
+#main-content {
+    position: relative;
+}
+
+.preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    z-index: 3000;
 }
 
 .landing .white-panel i {

@@ -32,7 +32,7 @@
             <div class="row">
                 <!-- <div class="col-sm-4 mb bg-orange">Ongoing Events</div> -->
                 <div class="col-sm-12 mb">
-                    <div id="eventCarousel" class="carousel slide" data-ride="carousel">
+                    <div id="eventCarousel" class="carousel slide" data-ride="carousel" data-interval="1500" data-pause="hover" ng-if="events.length > 0">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
                             <li data-target="#eventCarousel" data-slide-to="{{ $index }}" ng-repeat="event in ongoing" ng-class="{ 'active': $index == 0}"></li>
@@ -50,14 +50,14 @@
                             </div>
                         </div>
                         <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#eventCarousel" role="button" data-slide="prev">
+                        <span class="left carousel-control" data-target="#eventCarousel" role="button" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#eventCarousel" role="button" data-slide="next">
+                        </span>
+                        <span class="right carousel-control" data-target="#eventCarousel" role="button" data-slide="next">
                             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
-                        </a>
+                        </span>
                     </div>
                 </div>
             </div>

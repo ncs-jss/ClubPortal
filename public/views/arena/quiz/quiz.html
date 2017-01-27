@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/assets/css/quiz.css"/>
+<base-wrap/>
+<div class="row mt events">
+    <div class="col-lg-3 ds">
+        <h3>QUESTIONS</h3>
+        <!-- First Member -->
+        <div class="desc" ng-repeat="ques in questions" ng-click="selectQues(ques)" ng-disabled="!quiz.start">
+            <div class="thumb">
+                <span class="badge bg-theme">
+                    <i class="fa fa-clock-o"></i>
+                </span>
+            </div>
+            <div class="details">
+                <a>
+                    <h4>Question {{ $index+1 }}</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- /col-lg-3  -->
+    <div class="col-lg-9">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="showback">
+                    <h3>
+                        <i class="fa fa-angle-right"></i>
+                        Quiz
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /col-lg-9 END SECTION MIDDLE  -->
+</div>
+</base-wrap>

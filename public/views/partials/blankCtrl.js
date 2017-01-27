@@ -1,5 +1,13 @@
-angular.module('ClubPortal').controller('blankCtrl', function($scope, $rootScope, $attrs, $location) {
+angular.module('ClubPortal').controller('blankCtrl', function($scope, $rootScope, $attrs, $location, $timeout) {
     $scope.path = $location.$$path;
+    $scope.isLoaded = false;
+    /*$timeout(function() {
+        $scope.isLoaded = true;
+    }, 1000);*/
+    $scope.$on('data.loaded', function() {
+        console.log($scope.isLoaded);
+        $scope.isLoaded = true;
+    });
     /*---LEFT BAR ACCORDION----*/
     $(function() {
         $('#nav-accordion').dcAccordion({

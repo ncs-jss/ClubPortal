@@ -1,7 +1,8 @@
-angular.module('events').controller('editCtrl', function($scope, $location, eventsFactory, localStorageService, $routeParams, SessionService) {
+angular.module('events').controller('editCtrl', function($scope, $rootScope, $location, eventsFactory, localStorageService, $routeParams, SessionService) {
     console.log("r", $routeParams);
     eventsFactory.get($routeParams.id).then(function(data) {
         $scope.event = data.data;
+        $rootScope.$broadcast('data.loaded');
     });
     $scope.createEvent = function(form) {
         console.info($scope.event);

@@ -1,4 +1,4 @@
-angular.module('club').controller('viewCtrl', function($scope, $location, eventsFactory, localStorageService, $routeParams, SessionService) {
+angular.module('club').controller('viewCtrl', function($scope, $location, $rootScope, eventsFactory, localStorageService, $routeParams, SessionService) {
     console.log($routeParams);
     $scope.event = {};
     $scope.users = [{
@@ -26,6 +26,7 @@ angular.module('club').controller('viewCtrl', function($scope, $location, events
     eventsFactory.get($routeParams.id).then(function(res) {
         console.log(res.data);
         $scope.event = res.data;
+        $rootScope.$broadcast('data.loaded');
         assignStatus();
         // $scope.countdown = new Date($scope.event.end_time);
         // console.log(new Date($scope.countdown));
