@@ -30,7 +30,7 @@ All API paths must be prefixed with `/api/v1`
 | path | method | purpose |
 |:-----|:-------|:--------|
 | /design_events    | POST   | Create a new event. |
-| /design_events/:id    | PATCH  | Edit an exsisting event with id: `id`. | 
+| /design_events/:id    | PUT  | Edit an exsisting event with id: `id`. | 
 
 Example params:
 
